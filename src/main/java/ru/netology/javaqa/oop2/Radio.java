@@ -3,8 +3,8 @@ package ru.netology.javaqa.oop2;
 public class Radio {
 
     private int currentStation;
+    private int currentVolume;
     int minVolume = 0;
-    private int currentVolume = minVolume;
     int maxVolume = 100;
 
     //methods for stations
