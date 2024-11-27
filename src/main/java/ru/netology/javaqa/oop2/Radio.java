@@ -2,22 +2,21 @@ package ru.netology.javaqa.oop2;
 
 public class Radio {
 
-    public int currentStation;
-    public int minVolume = 0;
-    public int currentVolume = minVolume;
-    public int maxVolume = 100;
+    private int currentStation;
+    int minVolume = 0;
+    private int currentVolume = minVolume;
+    int maxVolume = 100;
 
     //methods for stations
 
-    public int setCurrentStation(int newCurrentStation) {
+    public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < 0) {
-            return -1;
+            return;
         }
         if (newCurrentStation > 9) {
-            return -1;
+            return;
         }
         currentStation = newCurrentStation;
-        return currentStation;
     }
 
     public int getCurrentStation() {
@@ -27,15 +26,17 @@ public class Radio {
     public void switchToNextStation() {
         if (currentStation == 9) {
             setCurrentStation(0);
+        } else {
+            setCurrentStation(currentStation + 1);
         }
-        else {setCurrentStation(currentStation + 1);}
     }
 
     public void switchToPreviousStation() {
         if (currentStation == 0) {
             setCurrentStation(9);
+        } else {
+            setCurrentStation(currentStation - 1);
         }
-        else {setCurrentStation(currentStation - 1);}
     }
 
     // methods related to volume
@@ -62,8 +63,7 @@ public class Radio {
 
     public void decreaseVolume() {
         if (currentVolume > minVolume) {
-            setCurrentVolume(currentVolume - 1);;
-        }
+            setCurrentVolume(currentVolume - 1);
+            }
     }
-
 }

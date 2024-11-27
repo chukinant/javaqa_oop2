@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RadioTest {
 
-
     //tests devoted to setCurrentStation method
     @Test
     void shouldSetCurrentStation() {
@@ -80,7 +79,7 @@ class RadioTest {
         rad.switchToNextStation();
 
         int expected = 6;
-        int actual = rad.currentStation;
+        int actual = rad.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -93,7 +92,7 @@ class RadioTest {
         rad.switchToNextStation();
 
         int expected = 0;
-        int actual = rad.currentStation;
+        int actual = rad.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -109,7 +108,7 @@ class RadioTest {
         rad.switchToPreviousStation();
 
         int expected = 4;
-        int actual = rad.currentStation;
+        int actual = rad.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -122,7 +121,7 @@ class RadioTest {
         rad.switchToPreviousStation();
 
         int expected = 9;
-        int actual = rad.currentStation;
+        int actual = rad.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -201,7 +200,7 @@ class RadioTest {
         rad.increaseVolume();
 
         int expected = 6;
-        int actual = rad.currentVolume;
+        int actual = rad.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -214,7 +213,7 @@ class RadioTest {
         rad.increaseVolume();
 
         int expected = rad.maxVolume;
-        int actual = rad.currentVolume;
+        int actual = rad.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -230,7 +229,7 @@ class RadioTest {
         rad.decreaseVolume();
 
         int expected = 4;
-        int actual = rad.currentVolume;
+        int actual = rad.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
     }
@@ -243,7 +242,7 @@ class RadioTest {
         rad.decreaseVolume();
 
         int expected = 0;
-        int actual = rad.currentVolume;
+        int actual = rad.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
     }
