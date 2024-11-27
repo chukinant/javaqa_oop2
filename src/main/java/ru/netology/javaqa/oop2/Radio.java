@@ -4,8 +4,8 @@ public class Radio {
 
     private int currentStation;
     private int currentVolume;
-    int minVolume = 0;
-    int maxVolume = 100;
+    private int minVolume = 0;
+    private int maxVolume = 100;
 
     //methods for stations
 
@@ -40,6 +40,15 @@ public class Radio {
     }
 
     // methods related to volume
+
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
 
     public void setCurrentVolume(int newCurrentVolume) {
         if (newCurrentVolume < minVolume) {

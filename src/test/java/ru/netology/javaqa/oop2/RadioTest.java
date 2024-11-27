@@ -145,9 +145,9 @@ class RadioTest {
     void shouldSetCurrentVolumeToMin() {
         Radio rad = new Radio();
 
-        rad.setCurrentVolume(rad.minVolume);
+        rad.setCurrentVolume(rad.getMinVolume());
 
-        int expected = rad.minVolume;
+        int expected = rad.getMinVolume();
         int actual = rad.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -169,9 +169,9 @@ class RadioTest {
     void shouldSetCurrentVolumeToMax() {
         Radio rad = new Radio();
 
-        rad.setCurrentVolume(rad.maxVolume);
+        rad.setCurrentVolume(rad.getMaxVolume());
 
-        int expected = rad.maxVolume;
+        int expected = rad.getMaxVolume();
         int actual = rad.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
@@ -209,10 +209,10 @@ class RadioTest {
     void shouldNotIncreaseVolumeIfMax() {
         Radio rad = new Radio();
 
-        rad.setCurrentVolume(rad.maxVolume);
+        rad.setCurrentVolume(rad.getMaxVolume());
         rad.increaseVolume();
 
-        int expected = rad.maxVolume;
+        int expected = rad.getMaxVolume();
         int actual = rad.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
