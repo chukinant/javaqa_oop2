@@ -2,6 +2,7 @@ package ru.netology.javaqa.oop2;
 
 public class Radio {
 
+    private int freqQty = 10;
     private int currentStation;
     private int currentVolume;
     private int minVolume = 0;
@@ -9,11 +10,18 @@ public class Radio {
 
     //methods for stations
 
+    public Radio (int freqQty) {
+        this.freqQty = freqQty;
+    }
+
+    public Radio () {
+    }
+
     public void setCurrentStation(int newCurrentStation) {
         if (newCurrentStation < 0) {
             return;
         }
-        if (newCurrentStation > 9) {
+        if (newCurrentStation > freqQty - 1) {
             return;
         }
         currentStation = newCurrentStation;
@@ -24,7 +32,7 @@ public class Radio {
     }
 
     public void switchToNextStation() {
-        if (currentStation == 9) {
+        if (currentStation == freqQty - 1) {
             setCurrentStation(0);
         } else {
             setCurrentStation(currentStation + 1);
@@ -33,7 +41,7 @@ public class Radio {
 
     public void switchToPreviousStation() {
         if (currentStation == 0) {
-            setCurrentStation(9);
+            setCurrentStation(freqQty - 1);
         } else {
             setCurrentStation(currentStation - 1);
         }
