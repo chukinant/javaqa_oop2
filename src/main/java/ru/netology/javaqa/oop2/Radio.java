@@ -73,6 +73,6 @@ public class Radio {
     public void decreaseVolume() {
         if (currentVolume > minVolume) {
             setCurrentVolume(currentVolume - 1);
-            }
+        }
     }
 }
