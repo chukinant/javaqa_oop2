@@ -21,7 +21,7 @@ class RadioTest {
     }
 
     @Test
-    void shouldSetCurrentStationToMax() {
+    void shouldSetCurrentStationToDefaultMax() {
         Radio rad = new Radio();
 
         rad.setCurrentStation(9);
@@ -57,12 +57,36 @@ class RadioTest {
     }
 
     @Test
-    void shouldNotSetCurrentStationIfAboveMax() {
+    void shouldNotSetCurrentStationIfAboveDefaultMax() {
         Radio rad = new Radio();
 
         rad.setCurrentStation(10);
 
         int unexpected = 10;
+        int actual = rad.getCurrentStation();
+
+        Assertions.assertNotEquals(unexpected, actual);
+    }
+
+    @Test
+    void shouldSetCurrentStationToMax() {
+        Radio rad = new Radio(20);
+
+        rad.setCurrentStation(19);
+
+        int expected = 19;
+        int actual = rad.getCurrentStation();
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void shouldNotSetCurrentStationIfAboveMax() {
+        Radio rad = new Radio(20);
+
+        rad.setCurrentStation(20);
+
+        int unexpected = 20;
         int actual = rad.getCurrentStation();
 
         Assertions.assertNotEquals(unexpected, actual);
