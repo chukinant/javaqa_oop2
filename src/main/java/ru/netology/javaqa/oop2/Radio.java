@@ -1,20 +1,34 @@
 package ru.netology.javaqa.oop2;
 
-public class Radio {
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+
+public class Radio {
     private int freqQty = 10;
     private int currentStation;
     private int currentVolume;
     private int minVolume = 0;
     private int maxVolume = 100;
 
+    //generated via Lombok
+
+    public Radio(int freqQty, int currentStation, int currentVolume, int minVolume, int maxVolume) {
+        this.freqQty = freqQty;
+        this.currentStation = currentStation;
+        this.currentVolume = currentVolume;
+        this.minVolume = minVolume;
+        this.maxVolume = maxVolume;
+    }
+
     //methods for stations
 
     public Radio (int freqQty) {
         this.freqQty = freqQty;
-    }
-
-    public Radio () {
     }
 
     public void setCurrentStation(int newCurrentStation) {
@@ -25,10 +39,6 @@ public class Radio {
             return;
         }
         currentStation = newCurrentStation;
-    }
-
-    public int getCurrentStation() {
-        return currentStation;
     }
 
     public void switchToNextStation() {
@@ -49,15 +59,6 @@ public class Radio {
 
     // methods related to volume
 
-
-    public int getMaxVolume() {
-        return maxVolume;
-    }
-
-    public int getMinVolume() {
-        return minVolume;
-    }
-
     public void setCurrentVolume(int newCurrentVolume) {
         if (newCurrentVolume < minVolume) {
             return;
@@ -66,10 +67,6 @@ public class Radio {
             return;
         }
         currentVolume = newCurrentVolume;
-    }
-
-    public int getCurrentVolume() {
-        return currentVolume;
     }
 
     public void increaseVolume() {
