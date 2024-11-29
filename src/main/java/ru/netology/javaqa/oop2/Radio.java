@@ -15,16 +15,6 @@ public class Radio {
     private int minVolume = 0;
     private int maxVolume = 100;
 
-    //generated via Lombok
-
-    public Radio(int freqQty, int currentStation, int currentVolume, int minVolume, int maxVolume) {
-        this.freqQty = freqQty;
-        this.currentStation = currentStation;
-        this.currentVolume = currentVolume;
-        this.minVolume = minVolume;
-        this.maxVolume = maxVolume;
-    }
-
     //methods for stations
 
     public Radio (int freqQty) {
